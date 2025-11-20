@@ -1,0 +1,102 @@
+[
+  {
+    "id": "proj-01",
+    "title": "E-Commerce Sample",
+    "category": "E-commerce",
+    "description": "Premium product listing with animated product cards and checkout UI",
+    "tags": ["E-commerce", "UI Design", "Responsive"],
+    "images": ["proj-01-slide-01", "proj-01-slide-02"],
+    "liveUrl": "https://ecommercesamplewebsite.vercel.app/",
+    "techStack": ["Next.js", "React", "TailwindCSS", "Framer Motion"]
+  },
+  {
+    "id": "proj-02",
+    "title": "Elite Premium Services",
+    "category": "Serv5ces",
+    "description": "High-end professional services website featuring pricing, features, and service categories",
+    "tags": ["Corporate", "Business", "Services"],
+    "images": ["proj-02-slide-01", "proj-02-slide-02"],
+    "liveUrl": "https://effulgent-fox-af2ca5.netlify.app/",
+    "techStack": ["Next.js", "TailwindCSS", "Framer Motion"]
+  },
+  {
+    "id": "proj-03",
+    "title": "LUXE Fashion & Salon",
+    "category": "Fashion / Beauty",
+    "description": "A premium fashion & salon experience website with lookbook, services, and modern aesthetics",
+    "tags": ["Fashion", "Beauty", "Premium UI"],
+    "images": ["proj-03-slide-01", "proj-03-slide-02", "proj-03-slide-03"],
+    "liveUrl": "https://lucent-alpaca-5ea07b.netlify.app/",
+    "techStack": ["Next.js", "TailwindCSS", "MDX"]
+  },
+  {
+    "id": "proj-04",
+    "title": "NewsPress Blog Portal",
+    "category": "Blog / Magazine",
+    "description": "A clean news platform with categories, trending posts, and optimized reading layou",
+    "tags": ["Blog", "News", "Content Platform"],
+    "images": ["proj-04-slide-01", "proj-04-slide-02"],
+    "liveUrl": "https://legendary-kleicha-c929a8.netlify.app/",
+    "techStack":["Next.js", "MDX", "TailwindCSS"]
+  },
+  {
+    "id": "proj-05",
+    "title": "FitZone Gym Website",
+    "category": "Fitness",
+    "description": "A sleek gym website with membership plans, trainer profiles, and fitness program sections",
+    "tags": ["Fitness", "Landing Page", "Modern UI"],
+    "images": ["proj-05-slide-01", "proj-05-slide-02"],
+    "liveUrl": "https://golden-cranachan-977548.netlify.app/",
+    "techStack": ["Next.js", "TailwindCSS", "Framer Motion"]
+  },
+  {
+    "id": "proj-06",
+    "title": "Gaming Hub Showcase",
+    "category": "Entertainment",
+    "description": "A bold, high-contrast gaming website with trailers, hero banners, and category sections",
+    "tags": ["Gaming", "Landing Page", "Animations"],
+    "images": ["proj-06-slide-01", "proj-06-slide-02"],
+    "liveUrl": "https://gaming-sample-website-sample.vercel.app/",
+    "techStack":["Next.js", "GSAP", "TailwindCSS"]
+  },
+  {
+    "id": "proj-07",
+    "title": "Creatify LMS Platform",
+    "category": "Education",
+    "description": "A learning management platform offering courses, dashboards, and lesson modules.",
+    "tags": ["Education", "Learning", "LMS"],
+    "images": ["proj-07-slide-01", "proj-07-slide-02"],
+    "liveUrl": "https://candid-bunny-5e69a1.netlify.app/",
+    "techStack": ["Next.js", "TailwindCSS", "ShadCN"]
+  },
+  {
+    "id": "proj-08",
+    "title": "Savoria  Sample Restaurant",
+    "category": "Food / Restaurant",
+    "description": "A vibrant restaurant site with food menu, reservations, and Cart System",
+    "tags": ["Restaurant", "Food Menu", "Modern"],
+    "images": ["proj-08-slide-01", "proj-08-slide-02"],
+    "liveUrl": "https://profound-alpaca-d92252.netlify.app/",
+    "techStack": ["Next.js", "TailwindCSS", "Framer Motion"]
+  },
+  {
+    "id": "proj-09",
+    "title": "Karachi Properties Hub Property Listing",
+    "category": "Real Estate",
+    "description": "A property marketplace with filters, map listings, and responsive property previews.",
+    "tags": ["Real Estate", "Listings", "Search"],
+    "images": ["proj-09-slide-01", "proj-09-slide-02", "proj-09-slide-03"],
+    "liveUrl": "https://sage-peony-dd7386.netlify.app/",
+    "techStack": ["Next.js", "TailwindCSS", "API Integration"]
+  },
+  {
+    "id": "proj-10",
+    "title": "AA Noor Travel & Tours",
+    "category": "Travel Agency",
+    "description": "A travel website offering packages, bookings, and destinations with a clean user experience",
+    "tags": ["Travel", "Bookings", "Tour Packages"],
+    "images": ["proj-10-slide-01", "proj-10-slide-02"],
+    "liveUrl": "https://aanoortravels.com/",
+    "techStack": ["Next.js", "TailwindCSS", "ShadCN"]
+  }
+]
