@@ -48,7 +48,9 @@ const Hero = () => {
       ))}
 
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* <div className="grid lg:grid-cols-2 gap-12 items-center"> */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+
           {/* Left: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
