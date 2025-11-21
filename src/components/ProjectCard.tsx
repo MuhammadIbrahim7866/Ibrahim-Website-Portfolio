@@ -221,7 +221,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
-// Import all project images
+// Import all images
 import proj01Slide01 from "@/assets/projects/portfolio mockups (1).jpeg";
 import proj01Slide02 from "@/assets/projects/portfolio mockups (2).jpeg";
 import proj01Slide03 from "@/assets/projects/portfolio mockups (22).jpeg";
@@ -309,6 +309,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     setCurrentSlide((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
+  const isMobile = typeof window !== "undefined" ? window.innerWidth < 768 : false;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -328,12 +330,15 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           alt={`${project.title} - Slide ${currentSlide + 1}`}
           className="w-full h-full object-cover transition-transform duration-500"
           initial={{ opacity: 0, scale: 1 }}
-          animate={{ opacity: 1, scale: isHovered ? 1.05 : 1 }}
+          animate={{ 
+            opacity: 1, 
+            scale: isHovered ? 1.05 : 1 
+          }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
 
-        {/* Carousel Controls - always visible on mobile */}
-        {project.images.length > 1 && (
+        {/* Carousel Controls */}
+        {isHovered && project.images.length > 1 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -392,11 +397,14 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           ))}
         </div>
 
-        {/* Tech Stack */}
+        {/* Tech Used */}
         {project.techStack && project.techStack.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+            animate={{ 
+              opacity: isHovered || isMobile ? 1 : 0, 
+              y: isHovered || isMobile ? 0 : 10 
+            }}
             transition={{ duration: 0.3 }}
             className="mb-4"
           >
