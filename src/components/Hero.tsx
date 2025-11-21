@@ -329,12 +329,19 @@ const Hero = () => {
             </motion.div>
           </motion.div> */}
           {/* LEFT TEXT SECTION */}
-<motion.div
+{/* <motion.div
   initial={{ opacity: 0, x: -50 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
   className="space-y-8 text-left sm:pl-2 max-[400px]:pl-3" // iPhone 12 slight left push
+> */}
+<motion.div
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="space-y-8 text-left sm:pl-2 max-[400px]:ml-[-10px]"
 >
+
   <motion.p
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -362,12 +369,19 @@ const Hero = () => {
     Crafting premium digital experiences through bold design and seamless functionality
   </motion.p>
 
-  <motion.div
+  {/* <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: 0.5 }}
     className="flex flex-row gap-4 pt-4 max-[400px]:pl-3" // slight left shift only on mobile
-  >
+  > */}
+  <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+  className="flex flex-row gap-4 pt-4 max-[400px]:ml-[-10px]"
+>
+
     <button
       onClick={() => scrollToSection("projects")}
       className="btn-hero group"
