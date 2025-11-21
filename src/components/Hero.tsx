@@ -204,171 +204,240 @@
 // };
 
 // export default Hero;
-import { motion } from "framer-motion";
-import { ArrowRight, Code2, Palette, Figma, Layers } from "lucide-react";
+// import { motion } from "framer-motion";
+// import { ArrowRight, Code2, Palette, Figma, Layers } from "lucide-react";
 
-const Hero = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+// const Hero = () => {
+//   const scrollToSection = (id: string) => {
+//     const element = document.getElementById(id);
+//     if (element) {
+//       element.scrollIntoView({ behavior: "smooth" });
+//     }
+//   };
 
-  const floatingIcons = [
-    { Icon: Code2, position: "top-20 left-10", delay: 0 },
-    { Icon: Palette, position: "top-40 right-20", delay: 0.5 },
-    { Icon: Figma, position: "bottom-32 left-20", delay: 1 },
-    { Icon: Layers, position: "top-60 left-1/4", delay: 1.5 },
-    { Icon: Code2, position: "bottom-20 right-1/4", delay: 2 },
-  ];
+//   const floatingIcons = [
+//     { Icon: Code2, position: "top-20 left-10", delay: 0 },
+//     { Icon: Palette, position: "top-40 right-20", delay: 0.5 },
+//     { Icon: Figma, position: "bottom-32 left-20", delay: 1 },
+//     { Icon: Layers, position: "top-60 left-1/4", delay: 1.5 },
+//     { Icon: Code2, position: "bottom-20 right-1/4", delay: 2 },
+//   ];
 
-  return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden"
-    >
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 opacity-30"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(3px)",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background" />
-      </div>
+//   return (
+// //     <section
+// //       id="hero"
+// //       className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden"
+// //     >
+// //       {/* Background */}
+// //       <div className="absolute inset-0 z-0">
+// //         <div
+// //           className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 opacity-30"
+// //           style={{
+// //             backgroundImage:
+// //               'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80")',
+// //             backgroundSize: "cover",
+// //             backgroundPosition: "center",
+// //             filter: "blur(3px)",
+// //           }}
+// //         />
+// //         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background" />
+// //       </div>
 
-      {/* Floating Icons */}
-      {floatingIcons.map(({ Icon, position, delay }, index) => (
-        <motion.div
-          key={index}
-          className={`floating-icon ${position}`}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.05, scale: 1 }}
-          transition={{ delay, duration: 1 }}
-        >
-          <Icon className="w-24 h-24" />
-        </motion.div>
-      ))}
+// //       {/* Floating Icons */}
+// //       {floatingIcons.map(({ Icon, position, delay }, index) => (
+// //         <motion.div
+// //           key={index}
+// //           className={`floating-icon ${position}`}
+// //           initial={{ opacity: 0, scale: 0 }}
+// //           animate={{ opacity: 0.05, scale: 1 }}
+// //           transition={{ delay, duration: 1 }}
+// //         >
+// //           <Icon className="w-24 h-24" />
+// //         </motion.div>
+// //       ))}
 
-      <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+// //       <div className="container mx-auto relative z-10">
+// //         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT TEXT SECTION */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6 text-left"
-          >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-sm uppercase tracking-widest text-accent font-semibold text-left"
-            >
-              UI/UX Designer & Frontend Developer
-            </motion.p>
+// //           {/* LEFT TEXT SECTION */}
+// //           <motion.div
+// //             initial={{ opacity: 0, x: -50 }}
+// //             animate={{ opacity: 1, x: 0 }}
+// //             transition={{ duration: 0.8, ease: "easeOut" }}
+// //             className="space-y-6 text-left"
+// //           >
+// //             <motion.p
+// //               initial={{ opacity: 0 }}
+// //               animate={{ opacity: 1 }}
+// //               transition={{ delay: 0.2 }}
+// //               className="text-sm uppercase tracking-widest text-accent font-semibold text-left"
+// //             >
+// //               UI/UX Designer & Frontend Developer
+// //             </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight text-left"
-            >
-              MUHAMMAD <br /> IBRAHIM
-            </motion.h1>
+// //             <motion.h1
+// //               initial={{ opacity: 0, y: 20 }}
+// //               animate={{ opacity: 1, y: 0 }}
+// //               transition={{ delay: 0.3 }}
+// //               className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight text-left"
+// //             >
+// //               MUHAMMAD <br /> IBRAHIM
+// //             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-lg font-medium text-left"
-            >
-              Crafting premium digital experiences through bold design and seamless functionality
-            </motion.p>
+// //             <motion.p
+// //               initial={{ opacity: 0 }}
+// //               animate={{ opacity: 1 }}
+// //               transition={{ delay: 0.4 }}
+// //               className="text-lg md:text-xl text-muted-foreground max-w-lg font-medium text-left"
+// //             >
+// //               Crafting premium digital experiences through bold design and seamless functionality
+// //             </motion.p>
 
-            {/* BUTTONS SIDE BY SIDE */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-row gap-4 pt-4"
-            >
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="btn-hero group"
-              >
-                View Projects
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+// //             {/* BUTTONS SIDE BY SIDE */}
+// //             <motion.div
+// //               initial={{ opacity: 0 }}
+// //               animate={{ opacity: 1 }}
+// //               transition={{ delay: 0.5 }}
+// //               className="flex flex-row gap-4 pt-4"
+// //             >
+// //               <button
+// //                 onClick={() => scrollToSection("projects")}
+// //                 className="btn-hero group"
+// //               >
+// //                 View Projects
+// //                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+// //               </button>
 
-              <a
-                href="https://wa.me/923272707907?text=Hi%20Muhammad%20Ibrahim%2C%20I%20am%20interested%20in%20your%20services."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl px-7 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-secondary transition-all duration-300"
-              >
-                <img
-                  src="/wa business logo.png"
-                  alt="WhatsApp"
-                  className="w-5 h-5 mr-2 dark:hidden"
-                />
-                <img
-                  src="/wa business white.png"
-                  alt="WhatsApp White"
-                  className="w-5 h-5 mr-2 hidden dark:inline"
-                />
-                Contact Me
-              </a>
-            </motion.div>
-          </motion.div>
+// //               <a
+// //                 href="https://wa.me/923272707907?text=Hi%20Muhammad%20Ibrahim%2C%20I%20am%20interested%20in%20your%20services."
+// //                 target="_blank"
+// //                 rel="noopener noreferrer"
+// //                 className="inline-flex items-center justify-center rounded-xl px-7 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-secondary transition-all duration-300"
+// //               >
+// //                 <img
+// //                   src="/wa business logo.png"
+// //                   alt="WhatsApp"
+// //                   className="w-5 h-5 mr-2 dark:hidden"
+// //                 />
+// //                 <img
+// //                   src="/wa business white.png"
+// //                   alt="WhatsApp White"
+// //                   className="w-5 h-5 mr-2 hidden dark:inline"
+// //                 />
+// //                 Contact Me
+// //               </a>
+// //             </motion.div>
+// //           </motion.div>
 
-          {/* RIGHT IMAGE SECTION */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="relative w-[95%] md:w-[75%] lg:w-full max-w-xl aspect-square ml-[-10px] mx-auto">
+// //           {/* RIGHT IMAGE SECTION */}
+// //           <motion.div
+// //             initial={{ opacity: 0, scale: 0.85 }}
+// //             animate={{ opacity: 1, scale: 1 }}
+// //             transition={{ duration: 1, ease: "easeOut" }}
+// //             className="relative"
+// //           >
+// //             <div className="relative w-[95%] md:w-[75%] lg:w-full max-w-xl aspect-square ml-[-10px] mx-auto">
               
-              {/* BORDER ANIMATION */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-[40%_60%_70%_30%/60%_30%_70%_40%]"
-                style={{
-                  background:
-                    "linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(var(--accent)) 100%)",
-                  padding: "8px",
-                  filter: "drop-shadow(0 0 30px hsl(var(--accent) / 0.7))",
-                }}
-              >
-                <div className="w-full h-full bg-background rounded-[40%_60%_70%_30%/60%_30%_70%_40%]" />
-              </motion.div>
+// //               {/* BORDER ANIMATION */}
+// //               <motion.div
+// //                 animate={{ rotate: 360 }}
+// //                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+// //                 className="absolute inset-0 rounded-[40%_60%_70%_30%/60%_30%_70%_40%]"
+// //                 style={{
+// //                   background:
+// //                     "linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(var(--accent)) 100%)",
+// //                   padding: "8px",
+// //                   filter: "drop-shadow(0 0 30px hsl(var(--accent) / 0.7))",
+// //                 }}
+// //               >
+// //                 <div className="w-full h-full bg-background rounded-[40%_60%_70%_30%/60%_30%_70%_40%]" />
+// //               </motion.div>
 
-              {/* PROFILE IMAGE */}
-              <div className="absolute inset-3 rounded-[40%_60%_70%_30%/60%_30%_70%_40%] overflow-hidden">
-                <img
-                  src="/profileimage.png"
-                  alt="Muhammad Ibrahim"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
+// //               {/* PROFILE IMAGE */}
+// //               <div className="absolute inset-3 rounded-[40%_60%_70%_30%/60%_30%_70%_40%] overflow-hidden">
+// //                 <img
+// //                   src="/profileimage.png"
+// //                   alt="Muhammad Ibrahim"
+// //                   className="w-full h-full object-cover"
+// //                 />
+// //               </div>
+// //             </div>
+// //           </motion.div>
 
+// //         </div>
+// //       </div>
+// //     </section>
+// //   );
+// // };
+
+// export default Hero;
+import { motion } from "framer-motion";
+
+export default function Hero() {
+  return (
+    <section className="min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 xl:px-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
+
+        {/* LEFT TEXT SECTION */}
+        <div className="space-y-6 text-left md:pl-4 lg:pl-8">
+
+          <p className="text-sm uppercase tracking-widest text-accent font-semibold text-left">
+            UI/UX Designer & Developer
+          </p>
+
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight text-left">
+            MUHAMMAD <br /> IBRAHIM
+          </h1>
+
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg font-medium text-left">
+            I design intuitive, modern, and aesthetically pleasing digital experiences that elevate brands and engage users.
+          </p>
+
+          {/* BUTTONS */}
+          <div className="flex flex-row items-center gap-4 pt-4 pl-1">
+
+            <button className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-all duration-300">
+              View Projects
+            </button>
+
+            <button className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-secondary transition-all duration-300">
+              Contact Me
+            </button>
+
+          </div>
         </div>
+
+        {/* IMAGE SECTION */}
+        <div className="flex justify-center md:justify-end">
+          <div className="relative w-[100%] md:w-[80%] lg:w-full max-w-2xl aspect-square ml-[-15px]">
+
+            {/* Animated frame */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 rounded-[40%_60%_70%_30%/60%_30%_70%_40%]"
+              style={{
+                background:
+                  "linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(var(--accent)) 100%)",
+                padding: "10px",
+                filter: "drop-shadow(0 0 35px hsl(var(--accent) / 0.7))",
+              }}
+            ></motion.div>
+
+            {/* IMAGE */}
+            <div className="absolute inset-0 rounded-[40%_60%_70%_30%/60%_30%_70%_40%] overflow-hidden">
+              <img
+                src="/hero.jpg"
+                alt="Profile"
+                className="w-full h-full object-cover scale-[1.08]"
+              />
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
 
