@@ -333,7 +333,7 @@ const Hero = () => {
   initial={{ opacity: 0, x: -50 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
-  className="space-y-8 text-left sm:pl-2" // <-- mobile pe extra 2px left padding
+  className="space-y-8 text-left sm:pl-2 max-[400px]:pl-3" // iPhone 12 slight left push
 >
   <motion.p
     initial={{ opacity: 0 }}
@@ -362,12 +362,11 @@ const Hero = () => {
     Crafting premium digital experiences through bold design and seamless functionality
   </motion.p>
 
-  {/* BUTTONS SIDE BY SIDE */}
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: 0.5 }}
-    className="flex flex-row gap-4 pt-4"
+    className="flex flex-row gap-4 pt-4 max-[400px]:pl-3" // slight left shift only on mobile
   >
     <button
       onClick={() => scrollToSection("projects")}
@@ -381,7 +380,7 @@ const Hero = () => {
       href="https://wa.me/923272707907?text=Hi%20Muhammad%20Ibrahim%2C%20I%20am%20interested%20in%20your%20services."
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center rounded-xl px-7 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-secondary transition-all duration-300 sm:ml-1" // <-- mobile pe image/button 1 unit left shift
+      className="inline-flex items-center justify-center rounded-xl px-7 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-secondary transition-all duration-300 sm:ml-1"
     >
       <img
         src="/wa business logo.png"
@@ -397,7 +396,6 @@ const Hero = () => {
     </a>
   </motion.div>
 </motion.div>
-
 
           {/* RIGHT IMAGE SECTION */}
           <motion.div
