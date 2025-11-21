@@ -73,7 +73,7 @@ const Hero = () => {
             >
               MUHAMMAD
               <br />
-              IBRAHIM
+              IBRAHIMMm
             </motion.h1>
 
             <motion.p
