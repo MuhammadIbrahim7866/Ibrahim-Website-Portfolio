@@ -259,12 +259,12 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT TEXT SECTION */}
+          {/* LEFT TEXT SECTION
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6 text-left"
+            className="space-y-8 text-left"
           >
             <motion.p
               initial={{ opacity: 0 }}
@@ -294,7 +294,7 @@ const Hero = () => {
             </motion.p>
 
             {/* BUTTONS SIDE BY SIDE */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -327,7 +327,77 @@ const Hero = () => {
                 Contact Me
               </a>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
+          {/* LEFT TEXT SECTION */}
+<motion.div
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="space-y-8 text-left sm:pl-2" // <-- mobile pe extra 2px left padding
+>
+  <motion.p
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.2 }}
+    className="text-sm uppercase tracking-widest text-accent font-semibold text-left"
+  >
+    UI/UX Designer & Frontend Developer
+  </motion.p>
+
+  <motion.h1
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3 }}
+    className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight text-left"
+  >
+    MUHAMMAD <br /> IBRAHIM
+  </motion.h1>
+
+  <motion.p
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.4 }}
+    className="text-lg md:text-xl text-muted-foreground max-w-lg font-medium text-left"
+  >
+    Crafting premium digital experiences through bold design and seamless functionality
+  </motion.p>
+
+  {/* BUTTONS SIDE BY SIDE */}
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.5 }}
+    className="flex flex-row gap-4 pt-4"
+  >
+    <button
+      onClick={() => scrollToSection("projects")}
+      className="btn-hero group"
+    >
+      View Projects
+      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+    </button>
+
+    <a
+      href="https://wa.me/923272707907?text=Hi%20Muhammad%20Ibrahim%2C%20I%20am%20interested%20in%20your%20services."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center rounded-xl px-7 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-secondary transition-all duration-300 sm:ml-1" // <-- mobile pe image/button 1 unit left shift
+    >
+      <img
+        src="/wa business logo.png"
+        alt="WhatsApp"
+        className="w-5 h-5 mr-2 dark:hidden"
+      />
+      <img
+        src="/wa business white.png"
+        alt="WhatsApp White"
+        className="w-5 h-5 mr-2 hidden dark:inline"
+      />
+      Contact Me
+    </a>
+  </motion.div>
+</motion.div>
+
 
           {/* RIGHT IMAGE SECTION */}
           <motion.div
