@@ -223,20 +223,16 @@ const Hero = () => {
   ];
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 overflow-hidden"
-    >
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div
+        <div 
           className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 opacity-30"
           style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(3px)",
+            backgroundImage: 'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(3px)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background" />
@@ -246,7 +242,7 @@ const Hero = () => {
       {floatingIcons.map(({ Icon, position, delay }, index) => (
         <motion.div
           key={index}
-          className={`floating-icon ${position} hidden sm:block`}
+          className={`floating-icon ${position}`}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.05, scale: 1 }}
           transition={{ delay, duration: 1 }}
@@ -256,13 +252,13 @@ const Hero = () => {
       ))}
 
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center max-w-full mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
           {/* Left: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6"
+            className="space-y-6 mx-auto lg:mx-0"
           >
             <motion.p
               initial={{ opacity: 0 }}
@@ -272,7 +268,7 @@ const Hero = () => {
             >
               UI/UX Designer & Frontend Developer
             </motion.p>
-
+            
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -281,14 +277,14 @@ const Hero = () => {
             >
               MUHAMMAD
               <br />
-              IBRAHI
+              IBRAHIM
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-muted-foreground max-w-lg font-medium"
+              className="text-xl text-muted-foreground max-w-lg font-medium mx-auto lg:mx-0"
             >
               Crafting premium digital experiences through bold design and seamless functionality
             </motion.p>
@@ -297,7 +293,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start"
             >
               <button
                 onClick={() => scrollToSection("projects")}
@@ -306,16 +302,15 @@ const Hero = () => {
                 View Projects
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-
               <a
                 href="https://wa.me/923272707907?text=Hi%20Muhammad%20Ibrahim%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20discuss%20more%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg- transition-all duration-300"
               >
-                <img
+                <img 
                   src="/wa business logo.png"
-                  alt="WhatsApp"
+                  alt="WhatsApp" 
                   className="w-5 h-5 mr-2 dark:hidden"
                 />
                 <img
@@ -333,24 +328,23 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            className="relative mx-auto"
           >
-            <div className="relative w-full aspect-square max-w-full mx-auto">
+            <div className="relative w-full aspect-square max-w-lg mx-auto">
               {/* Animated Border with Glow */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 rounded-[40%_60%_70%_30%/60%_30%_70%_40%]"
                 style={{
-                  background:
-                    "linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(var(--accent)) 100%)",
+                  background: "linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(var(--accent)) 100%)",
                   padding: "4px",
                   filter: "drop-shadow(0 0 20px hsl(var(--accent) / 0.4))",
                 }}
               >
                 <div className="w-full h-full bg-background rounded-[40%_60%_70%_30%/60%_30%_70%_40%]" />
               </motion.div>
-
+              
               {/* Profile Image */}
               <div className="absolute inset-3 rounded-[40%_60%_70%_30%/60%_30%_70%_40%] overflow-hidden">
                 <img
