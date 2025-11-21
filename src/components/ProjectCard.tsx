@@ -219,7 +219,7 @@
 // export default ProjectCard;
 import { motion } from "framer-motion";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Import all images
 import proj01Slide01 from "@/assets/projects/portfolio mockups (1).jpeg";
@@ -298,6 +298,14 @@ interface Project {
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const nextSlide = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -309,15 +317,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     setCurrentSlide((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
-  const isMobile = typeof window !== "undefined" ? window.innerWidth < 768 : false;
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
-      whileHover={{ y: -8, scale: 1.04 }}
+      whileHover={{ y: 0, scale: 1.02 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className="group relative bg-card border-2 border-border rounded-2xl overflow-hidden shadow-soft hover:shadow-strong hover:border-accent transition-all duration-300"
@@ -330,18 +336,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           alt={`${project.title} - Slide ${currentSlide + 1}`}
           className="w-full h-full object-cover transition-transform duration-500"
           initial={{ opacity: 0, scale: 1 }}
-          animate={{ 
-            opacity: 1, 
-            scale: isHovered ? 1.05 : 1 
+          animate={{
+            opacity: 1,
+            scale: isHovered && !isMobile ? 1.05 : 1,
           }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
 
         {/* Carousel Controls */}
-        {isHovered && project.images.length > 1 && (
+        {project.images.length > 1 && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: isHovered || isMobile ? 1 : 0 }}
             className="absolute inset-0 flex items-center justify-between px-4"
           >
             <button
@@ -401,10 +407,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         {project.techStack && project.techStack.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
-            animate={{ 
-              opacity: isHovered || isMobile ? 1 : 0, 
-              y: isHovered || isMobile ? 0 : 10 
-            }}
+            animate={{ opacity: isHovered || isMobile ? 1 : 0, y: isHovered || isMobile ? 0 : 10 }}
             transition={{ duration: 0.3 }}
             className="mb-4"
           >
