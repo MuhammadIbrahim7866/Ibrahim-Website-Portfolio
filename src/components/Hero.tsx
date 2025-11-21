@@ -204,35 +204,37 @@
 // export default Hero;
 import { motion } from "framer-motion";
 import { Download, ArrowRight, Code2, Palette, Figma, Layers } from "lucide-react";
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/profileimage.png"; // <-- assets folder se import
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   const floatingIcons = [
-    { Icon: Code2, position: "top-20 left-10", delay: 0 },
-    { Icon: Palette, position: "top-40 right-20", delay: 0.5 },
-    { Icon: Figma, position: "bottom-32 left-20", delay: 1 },
+    { Icon: Code2, position: "top-20 left-5 md:left-10", delay: 0 },
+    { Icon: Palette, position: "top-40 right-5 md:right-20", delay: 0.5 },
+    { Icon: Figma, position: "bottom-32 left-5 md:left-20", delay: 1 },
     { Icon: Layers, position: "top-60 left-1/4", delay: 1.5 },
     { Icon: Code2, position: "bottom-20 right-1/4", delay: 2 },
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden"
+    >
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 opacity-30"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'blur(3px)',
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(3px)",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background" />
@@ -242,7 +244,7 @@ const Hero = () => {
       {floatingIcons.map(({ Icon, position, delay }, index) => (
         <motion.div
           key={index}
-          className={`floating-icon ${position}`}
+          className={`absolute ${position} hidden md:block`}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.05, scale: 1 }}
           transition={{ delay, duration: 1 }}
@@ -252,13 +254,13 @@ const Hero = () => {
       ))}
 
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+        <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
           {/* Left: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6 mx-auto lg:mx-0"
+            className="space-y-6 text-center lg:text-left"
           >
             <motion.p
               initial={{ opacity: 0 }}
@@ -268,23 +270,23 @@ const Hero = () => {
             >
               UI/UX Designer & Frontend Developer
             </motion.p>
-            
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight"
             >
               MUHAMMAD
               <br />
-              IBRAHIM
+              IBRAHI
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-muted-foreground max-w-lg font-medium mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-muted-foreground max-w-md mx-auto lg:mx-0 font-medium"
             >
               Crafting premium digital experiences through bold design and seamless functionality
             </motion.p>
@@ -302,15 +304,16 @@ const Hero = () => {
                 View Projects
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
+
               <a
                 href="https://wa.me/923272707907?text=Hi%20Muhammad%20Ibrahim%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20discuss%20more%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg- transition-all duration-300"
+                className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-semibold border-2 border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
-                <img 
+                <img
                   src="/wa business logo.png"
-                  alt="WhatsApp" 
+                  alt="WhatsApp"
                   className="w-5 h-5 mr-2 dark:hidden"
                 />
                 <img
@@ -328,10 +331,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative mx-auto"
+            className="relative w-full max-w-md mx-auto"
           >
-            <div className="relative w-full aspect-square max-w-lg mx-auto">
-              {/* Animated Border with Glow */}
+            <div className="relative w-full aspect-square">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -344,36 +346,14 @@ const Hero = () => {
               >
                 <div className="w-full h-full bg-background rounded-[40%_60%_70%_30%/60%_30%_70%_40%]" />
               </motion.div>
-              
-              {/* Profile Image */}
+
               <div className="absolute inset-3 rounded-[40%_60%_70%_30%/60%_30%_70%_40%] overflow-hidden">
                 <img
-                  src="/profileimage.png"
+                  src={profileImg}
                   alt="Muhammad Ibrahim"
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* Floating Particles */}
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 rounded-full bg-accent/30"
-                  style={{
-                    left: `${20 + i * 15}%`,
-                    top: `${10 + i * 20}%`,
-                  }}
-                  animate={{
-                    y: [-20, 20, -20],
-                    opacity: [0.3, 0.8, 0.3],
-                  }}
-                  transition={{
-                    duration: 3 + i,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
             </div>
           </motion.div>
         </div>
